@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner/Banner";
+import Friends from "@/components/Friends/Friends";
 import Stats from "@/components/Stats/Stats";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="bg-base-200">
       <Banner />
       <Stats/>
+      <Friends />
     </div>
   );
 }
