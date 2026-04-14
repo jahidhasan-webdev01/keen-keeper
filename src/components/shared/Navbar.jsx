@@ -27,7 +27,7 @@ const Navbar = () => {
         },
     ]
     return (
-        <div className="bg-base-100 shadow-sm py-5">
+        <div className="bg-base-100 shadow-sm p-5">
             <div className="container mx-auto flex justify-between">
                 <div>
                     <Link href="/">
@@ -42,7 +42,7 @@ const Navbar = () => {
                             return <Link
                                 key={index}
                                 href={nav.path}
-                                className={`flex items-center font-medium gap-1 px-3 py-2 rounded ${pathname === nav.path ? "bg-green-800 text-white" : "text-gray-500"}`}>
+                                className={`btn ${pathname === nav.path ? "bg-green-800 text-white" : "border-none bg-transparent text-gray-500"}`}>
                                 <Icon />{nav.name}
                             </Link>
                         })

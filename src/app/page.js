@@ -1,7 +1,11 @@
+import Banner from "@/components/Banner/Banner";
+import Stats from "@/components/Stats/Stats";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Keen Keeper</h1>
+    <div className="bg-base-200">
+      <Banner />
+      <Stats/>
     </div>
   );
 }
