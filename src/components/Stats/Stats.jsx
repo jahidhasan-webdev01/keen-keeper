@@ -18,7 +18,7 @@ const Stats = () => {
         }
     ]
     return (
-        <div className="w-full px-5 md:w-2/3 md:px-0 mx-auto grid grid-cols-2 lg:grid-cols-4 py-5 gap-5">
+        <div className="w-full px-5 md:w-2/3 md:px-0 mx-auto grid grid-cols-2 lg:grid-cols-4 pt-5 pb-10 gap-5 border-b-2 border-gray-300">
             {
                 data.map((d, index) =>
                     <div
