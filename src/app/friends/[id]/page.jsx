@@ -20,8 +20,8 @@ const FriendDetailPage = async ({ params }) => {
 
     return (
         <div className="bg-base-300">
-            <div className="container mx-auto min-h-screen py-20 grid grid-cols-3 gap-5">
-                <div className="space-y-2">
+            <div className="container mx-auto min-h-screen py-10 lg:py-20 grid grid-cols-3 gap-5 px-5 md:px-0">
+                <div className="space-y-2 col-span-3 md:col-span-1">
                     <div className="flex flex-col items-center bg-white py-5 px-2 md:px-5 gap-2 rounded-lg shadow-lg">
                         <Image className="rounded-full" src={selectedFriend.picture} alt={selectedFriend.name} width={100} height={100}></Image>
                         <h1 className="font-bold text-xl">{selectedFriend.name}</h1>
@@ -58,12 +58,11 @@ const FriendDetailPage = async ({ params }) => {
                         <button className="btn w-full bg-white"><LuArchive />Archive</button>
                     </div>
                     <div>
-                        <button className="btn w-full text-red-600"><AiOutlineDelete />Delete</button>
+                        <button className="btn w-full bg-white text-red-600"><AiOutlineDelete />Delete</button>
                     </div>
                 </div>
 
-
-                <div className="col-span-2 space-y-5">
+                <div className="col-span-3 md:col-span-2 space-y-5">
                     <div className="grid grid-cols-3 gap-5">
                         <div className="bg-white text-center py-10 px-5 rounded-lg">
                             <h1 className="text-2xl font-bold text-gray-500">62</h1>
