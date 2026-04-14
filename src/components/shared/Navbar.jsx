@@ -34,7 +34,7 @@ const Navbar = () => {
                         <h1 className="font-extrabold text-3xl">Keen<span className="font-medium">Keeper</span> </h1>
                     </Link>
                 </div>
-                {/* <div className="flex gap-0.5 lg:gap-2">
+                <div className="flex gap-0.5 lg:gap-2">
                     {
                         navLinks.map((nav, index) => {
                             const Icon = nav.icon;
@@ -47,7 +47,7 @@ const Navbar = () => {
                             </Link>
                         })
                     }
-                </div> */}
+                </div>
             </div>
         </div>
     );

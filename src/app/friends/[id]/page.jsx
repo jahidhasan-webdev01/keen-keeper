@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { AiOutlineDelete } from "react-icons/ai";
 import { LuArchive, LuBellDot } from "react-icons/lu";
-import Link from "next/link";
-import { MdOutlineMessage, MdWifiCalling2 } from "react-icons/md";
-import { CiVideoOn } from "react-icons/ci";
+import ActionButtons from "@/ui/ActionButtons";
 
 const getFriends = async () => {
     const response = await fetch("http://localhost:3000/data/friends.json")
@@ -90,18 +88,7 @@ const FriendDetailPage = async ({ params }) => {
                         <h1 className="font-bold text-gray-700 text-2xl">Quick Check-In</h1>
 
                         <div className="grid grid-cols-3 gap-5 mt-5">
-                            <Link href={""} className=" bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5">
-                                <MdWifiCalling2 className="text-2xl"/>
-                                Call
-                            </Link>
-                            <Link href={""} className=" bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5">
-                                <MdOutlineMessage className="text-2xl"/>
-                                Call
-                            </Link>
-                            <Link href={""} className=" bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5">
-                                <CiVideoOn className="text-2xl" />
-                                Call
-                            </Link>
+                            <ActionButtons friend={selectedFriend} />
                         </div>
                     </div>
                 </div>
