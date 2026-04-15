@@ -19,7 +19,7 @@ const Friends = async () => {
                     friendsData.map((data, index) =>
                         <Link key={index} href={`/friends/${data.id}`} >
                             <div
-                                className="flex flex-col justify-center items-center bg-white py-10 gap-4 px-4 border border-gray-200 shadow-lg rounded-lg"
+                                className="flex flex-col justify-center items-center bg-white hover:bg-gray-50 py-10 gap-4 px-4 border border-gray-200 shadow-lg rounded-lg"
                             >
                                 <Image className="rounded-full" src={data.picture} alt={data.name} width={100} height={100}></Image>
                                 <h1 className="font-bold text-xl">{data.name}</h1>

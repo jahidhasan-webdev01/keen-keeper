@@ -7,10 +7,11 @@ import toast from "react-hot-toast";
 
 const ActionButtons = ({ friend }) => {
     const { addEntry } = useContext(TimelineContext)
+
     const handleActions = (type) => {
         const entry = {
-            ...friend,
-            title: `${type} with ${friend.name}`,
+            friendName: friend.name,
+            type,
             date: new Date().toISOString(),
         };
 
