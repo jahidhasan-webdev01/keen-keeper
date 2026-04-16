@@ -10,6 +10,7 @@ const getFriends  = async () => {
     return data;
 }
 
+console.log("YOo");
 const Friends = async () => {
     const friendsData = await getFriends();
 
