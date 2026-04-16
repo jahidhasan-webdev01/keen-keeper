@@ -5,7 +5,7 @@ import ActionButtons from "@/ui/ActionButtons";
 import { notFound } from "next/navigation";
 
 const getFriends = async () => {
-    const response = await fetch("https:/keen-keeper-sage-one.vercel.app//data/friends.json")
+    const response = await fetch("https:/keen-keeper-sage-one.vercel.app/data/friends.json")
     const data = await response.json()
 
     return data;
