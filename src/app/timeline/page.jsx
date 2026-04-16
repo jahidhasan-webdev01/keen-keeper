@@ -42,7 +42,7 @@ const TimelinePage = () => {
             <div className="container mx-auto min-h-screen py-10 lg:py-20 px-5 md:px-0">
                 <h1 className="font-bold text-3xl">Timeline</h1>
                 {
-                    filteredData.length > 0 &&
+                    timelineData.length > 0 &&
                     <div className="mt-5 grid grid-cols-4 gap-5">
                         <div className="col-span-1">
                             <select
@@ -97,7 +97,7 @@ const TimelinePage = () => {
                             <Activity dataToShow={filteredData} />
                         </div> :
                         <div className="mt-5 min-h-[70vh] flex justify-center items-center bg-white px-5 py-10 rounded-xl border border-gray-200">
-                            <h1 className="font-bold text-gray-500 text-xl">No interactions yet</h1>
+                            <h1 className="font-bold text-gray-500 text-xl">No interactions found!</h1>
                         </div>
                 }
             </div>
