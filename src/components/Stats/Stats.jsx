@@ -18,7 +18,7 @@ const Stats = async () => {
         }
     ]
     return (
-        <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-5 px-5">
+        <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5 px-5">
             {
                 data.map((d, index) =>
                     <div
