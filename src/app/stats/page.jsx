@@ -1,10 +1,11 @@
 "use client";
 import { TimelineContext } from "@/context/TimelineContext";
+import LoadingUI from "@/ui/LoadingUI";
 import { useContext } from "react";
 import { Pie, PieChart, Tooltip, Legend } from "recharts";
 
 const StatsPage = () => {
-    const { timelineData } = useContext(TimelineContext);
+    const { timelineData, loading } = useContext(TimelineContext);
 
     const callCount = timelineData.filter(item => item.type === "Call").length;
     const textCount = timelineData.filter(item => item.type === "Text").length;
@@ -15,6 +16,10 @@ const StatsPage = () => {
         { name: "Text", value: textCount, fill: "#8B5CF6" },
         { name: "Video", value: videoCount, fill: "#22C55E" },
     ];
+
+    if (loading) {
+        return <LoadingUI />
+    }
 
     return (
         <div className="bg-base-300">

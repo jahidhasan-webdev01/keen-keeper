@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 👥 KeenKeeper
 
-## Getting Started
+## 📌 Overview
 
-First, run the development server:
+KeenKeeper is a modern friendship tracking web application built with **Next.js (App Router)**. It helps users maintain meaningful relationships by tracking interactions, setting communication goals, and visualizing engagement patterns over time.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Live Demo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+🔗 https://your-live-link.vercel.app
+🔗 https://github.com/jahidhasan-webdev01/keen-keeper
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+* ⚡ Next.js (App Router)
+* 🎨 Tailwind CSS + DaisyUI
+* 📊 Recharts
+* 🔄 Context API (Global State Management)
+* 🔔 React Hot Toast
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Features
 
-## Deploy on Vercel
+### 👫 Friend Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Display friends from a local JSON data source
+* Fully responsive card grid (mobile → tablet → desktop)
+* Status-based UI (overdue / almost due / on-track)
+* Click any friend card to view detailed profile
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### 👤 Friend Details Page
+
+* Clean two-column responsive layout
+
+* Displays:
+
+  * Profile image, name, tags
+  * Bio and email
+  * Status with dynamic color indicator
+
+* Action buttons (UI only):
+
+  * ⏰ Snooze
+  * 📦 Archive
+  * 🗑️ Delete
+
+---
+
+### ⚡ Quick Check-In (Core Feature)
+
+* Instantly log interactions:
+
+  * 📞 Call
+  * 💬 Text
+  * 🎥 Video
+
+* On click:
+
+  * Adds a new timeline entry
+  * Saves data in **Context API + LocalStorage**
+  * Displays a real-time toast notification
+
+---
+
+### 📜 Timeline System
+
+* View complete interaction history
+
+* Each entry includes:
+
+  * 📅 Date
+  * 🔣 Interaction type (Call / Text / Video)
+  * 📝 Title (e.g., "Call with Alex")
+
+* Advanced features:
+
+  * 🔍 Filter by interaction type
+  * 🔎 Search by friend name or interaction type
+  * ↕️ Sort by newest or oldest
+
+---
+
+### 📊 Friendship Analytics (Stats Page)
+
+* Built with **Recharts**
+* Interactive Pie Chart displaying:
+
+  * 📞 Call count
+  * 💬 Text count
+  * 🎥 Video count
+
+---
+
+## ⚙️ Additional Functionalities
+
+* ⏳ Loading spinner while fetching friend data
+* ❌ Custom 404 page (`not-found.jsx`) for invalid routes
+* 🔄 Seamless page reload without errors (Next.js routing)
+* 📱 Fully responsive design across all devices
+* 🎯 Pixel-perfect UI based on Figma design
+
+---
+
+## 🧠 Core Logic
+
+* Friend data is stored in a local JSON file
+* Timeline interactions are managed globally using Context API
+* Data is persisted using LocalStorage for state retention
+* Quick Check-In actions dynamically update both timeline and analytics
+* Stats page calculates interaction distribution from stored timeline data

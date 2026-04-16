@@ -8,7 +8,7 @@
     "status": "overdue",
     "tags": ["school", "close friend"],
     "bio": "We studied together in high school in Rajshahi. Still one of the most supportive friends in my life.",
-    "goal": 14,
+    "goal": 7,
     "next_due_date": "2026-04-05"
   },
   {
@@ -20,7 +20,7 @@
     "status": "almost due",
     "tags": ["university", "study partner"],
     "bio": "Met during university group projects. We often discuss career goals and tech trends.",
-    "goal": 14,
+    "goal": 30,
     "next_due_date": "2026-04-18"
   },
   {
@@ -44,7 +44,7 @@
     "status": "overdue",
     "tags": ["neighbor", "family friend"],
     "bio": "Grew up in the same neighborhood. Our families are closely connected.",
-    "goal": 14,
+    "goal": 20,
     "next_due_date": "2026-04-01"
   },
   {
@@ -56,7 +56,7 @@
     "status": "almost due",
     "tags": ["football", "local club"],
     "bio": "Teammate from our local football club. We still meet occasionally for matches.",
-    "goal": 14,
+    "goal": 12,
     "next_due_date": "2026-04-15"
   },
   {
@@ -80,7 +80,7 @@
     "status": "overdue",
     "tags": ["gym", "fitness"],
     "bio": "Workout partner from the gym. Keeps me motivated to stay consistent.",
-    "goal": 14,
+    "goal": 16,
     "next_due_date": "2026-04-08"
   },
   {
@@ -92,7 +92,7 @@
     "status": "almost due",
     "tags": ["online friend", "content creator"],
     "bio": "Connected through social media. We share ideas about content creation and growth.",
-    "goal": 14,
+    "goal": 18,
     "next_due_date": "2026-04-19"
   }
 ]

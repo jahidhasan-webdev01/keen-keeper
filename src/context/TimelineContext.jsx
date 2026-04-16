@@ -4,13 +4,15 @@ import { createContext, useEffect, useState } from "react";
 export const TimelineContext = createContext();
 
 const TimelineContextProvider = ({ children }) => {
-    const [timelineData, setTimelineData] = useState([])
+    const [timelineData, setTimelineData] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const stored = localStorage.getItem("timeline");
         if (stored) {
             setTimelineData(JSON.parse(stored));
         }
+        setLoading(false);
     }, []);
 
     useEffect(() => {
@@ -22,7 +24,7 @@ const TimelineContextProvider = ({ children }) => {
     };
 
     return (
-        <TimelineContext.Provider value={{ timelineData, addEntry }}>
+        <TimelineContext.Provider value={{ timelineData, addEntry, loading }}>
             {children}
         </TimelineContext.Provider >
     );

@@ -2,9 +2,12 @@ import Image from "next/image";
 import { AiOutlineDelete } from "react-icons/ai";
 import { LuArchive, LuBellDot } from "react-icons/lu";
 import ActionButtons from "@/ui/ActionButtons";
+import { notFound } from "next/navigation";
 
 const getFriends = async () => {
-    const response = await fetch("http://localhost:3000/data/friends.json")
+    const response = await fetch("http://localhost:3000/data/friends.json", {
+        cache: "no-store"
+    })
     const data = await response.json()
 
     return data;
@@ -14,7 +17,19 @@ const FriendDetailPage = async ({ params }) => {
     const { id } = await params
     const friendsData = await getFriends();
 
-    const selectedFriend = friendsData.find((data) => String(data.id) === id)
+    const selectedFriend = friendsData.find((data) => String(data.id) === id);
+
+    if (!selectedFriend) {
+        notFound();
+    }
+
+    const formatDate = (dateString) => {
+        return new Date(dateString).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+    };
 
     return (
         <div className="bg-base-300">
@@ -46,7 +61,7 @@ const FriendDetailPage = async ({ params }) => {
                         </div>
 
                         <p className="text-gray-500 italic text-center mt-1">&quot;{selectedFriend.bio}&quot;</p>
-                        <p className="text-gray-500">Prefered: email</p>
+                        <p className="text-gray-500">Prefered: {selectedFriend.email}</p>
 
                     </div>
                     <div>
@@ -63,15 +78,19 @@ const FriendDetailPage = async ({ params }) => {
                 <div className="col-span-3 md:col-span-2 space-y-5">
                     <div className="grid grid-cols-3 gap-5">
                         <div className="bg-white text-center py-10 px-5 rounded-lg">
-                            <h1 className="text-2xl font-bold text-gray-500">62</h1>
+                            <h1 className="text-2xl font-bold text-gray-500">{selectedFriend.days_since_contact}</h1>
                             <p className="text-gray-500">Days Since Contact</p>
                         </div>
                         <div className="bg-white text-center py-10 px-5 rounded-lg">
-                            <h1 className="text-2xl font-bold text-gray-500">30</h1>
+                            <h1 className="text-2xl font-bold text-gray-500">{selectedFriend.goal}</h1>
                             <p className="text-gray-500">Goal (Days)</p>
                         </div>
                         <div className="bg-white text-center py-10 px-5 rounded-lg">
-                            <h1 className="text-2xl font-bold text-gray-500">Feb 27, 2026</h1>
+                            <h1 className="text-2xl font-bold text-gray-500">
+                                {
+                                    formatDate(selectedFriend.next_due_date)
+                                }
+                            </h1>
                             <p className="text-gray-500">Next Due</p>
                         </div>
                     </div>
@@ -79,7 +98,7 @@ const FriendDetailPage = async ({ params }) => {
                         <div>
                             <h1 className="font-bold text-gray-700 text-2xl">Relationship Goal</h1>
                             <p className="text-gray-500 mt-2">Connect every
-                                <span className="font-bold text-black"> 30 days</span>
+                                <span className="font-bold text-black"> {selectedFriend.goal} days</span>
                             </p>
                         </div>
                         <button className="btn">Edit</button>

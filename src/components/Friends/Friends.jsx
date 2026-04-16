@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getFriends  = async () => {
-    const response = await fetch("http://localhost:3000/data/friends.json")
+    const response = await fetch("http://localhost:3000/data/friends.json", {
+        cache: "no-store"
+    })
     const data = await response.json()
 
     return data;
