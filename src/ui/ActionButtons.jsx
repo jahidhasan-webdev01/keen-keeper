@@ -21,16 +21,16 @@ const ActionButtons = ({ friend }) => {
     }
     return (
         <>
-            <button onClick={() => handleActions("Call")} className="cursor-pointer bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5">
-                <MdWifiCalling2 className="text-2xl" />
+            <button onClick={() => handleActions("Call")} className="cursor-pointer bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5 font-bold">
+                <MdWifiCalling2 className="text-2xl font-bold" />
                 Call
             </button>
-            <button onClick={() => handleActions("Text")} className="cursor-pointer bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5">
-                <MdOutlineMessage className="text-2xl" />
+            <button onClick={() => handleActions("Text")} className="cursor-pointer bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5 font-bold">
+                <MdOutlineMessage className="text-2xl font-bold" />
                 Text
             </button>
-            <button onClick={() => handleActions("Video")} className="cursor-pointer bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5">
-                <CiVideoOn className="text-2xl" />
+            <button onClick={() => handleActions("Video")} className="cursor-pointer bg-gray-100 border border-gray-200 rounded-lg flex flex-col justify-center items-center gap-1 py-5 font-bold">
+                <CiVideoOn className="text-2xl font-bold" />
                 Video
             </button>
         </>

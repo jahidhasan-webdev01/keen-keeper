@@ -5,7 +5,7 @@ import ActionButtons from "@/ui/ActionButtons";
 import { notFound } from "next/navigation";
 
 const getFriends = async () => {
-    const response = await fetch("https:/keen-keeper-sage-one.vercel.app/data/friends.json")
+    const response = await fetch("http://localhost:3000/data/friends.json")
     const data = await response.json()
 
     return data;
@@ -31,7 +31,7 @@ const FriendDetailPage = async ({ params }) => {
 
     return (
         <div className="bg-base-300">
-            <div className="container mx-auto min-h-screen py-10 lg:py-20 grid grid-cols-3 gap-5 px-5 md:px-0">
+            <div className="container mx-auto min-h-screen py-5 md:py-10 grid grid-cols-3 gap-5 px-2 md:px-0">
                 <div className="space-y-2 col-span-3 md:col-span-1">
                     <div className="flex flex-col items-center bg-white py-5 px-2 md:px-5 gap-2 rounded-lg shadow-lg">
                         <Image className="rounded-full" src={selectedFriend.picture} alt={selectedFriend.name} width={100} height={100}></Image>
@@ -74,16 +74,16 @@ const FriendDetailPage = async ({ params }) => {
                 </div>
 
                 <div className="col-span-3 md:col-span-2 space-y-5">
-                    <div className="grid grid-cols-3 gap-5">
-                        <div className="bg-white text-center py-10 px-5 rounded-lg">
+                    <div className="grid grid-cols-6 gap-5">
+                        <div className="col-span-3 md:col-span-2 bg-white text-center py-10 px-5 rounded-lg">
                             <h1 className="text-2xl font-bold text-gray-500">{selectedFriend.days_since_contact}</h1>
                             <p className="text-gray-500">Days Since Contact</p>
                         </div>
-                        <div className="bg-white text-center py-10 px-5 rounded-lg">
+                        <div className="col-span-3 md:col-span-2 bg-white text-center py-10 px-5 rounded-lg">
                             <h1 className="text-2xl font-bold text-gray-500">{selectedFriend.goal}</h1>
                             <p className="text-gray-500">Goal (Days)</p>
                         </div>
-                        <div className="bg-white text-center py-10 px-5 rounded-lg">
+                        <div className="col-span-6 md:col-span-2 bg-white text-center py-10 px-5 rounded-lg">
                             <h1 className="text-2xl font-bold text-gray-500">
                                 {
                                     formatDate(selectedFriend.next_due_date)
@@ -101,10 +101,10 @@ const FriendDetailPage = async ({ params }) => {
                         </div>
                         <button className="btn">Edit</button>
                     </div>
-                    <div className="bg-white col-span-3 py-10 px-5 rounded-lg">
+                    <div className="bg-white col-span-3 py-5 md:py-10 px-2 md:px-5 rounded-lg">
                         <h1 className="font-bold text-gray-700 text-2xl">Quick Check-In</h1>
 
-                        <div className="grid grid-cols-3 gap-5 mt-5">
+                        <div className="grid grid-cols-3 gap-2 md:gap-5 mt-5">
                             <ActionButtons friend={selectedFriend} />
                         </div>
                     </div>

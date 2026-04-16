@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getFriends = async () => {
-    const response = await fetch("https://keen-keeper-sage-one.vercel.app/data/friends.json")
+    const response = await fetch("http://localhost:3000/data/friends.json")
     const data = await response.json()
 
     return data;

@@ -2,7 +2,7 @@
 import { TimelineContext } from "@/context/TimelineContext";
 import LoadingUI from "@/ui/LoadingUI";
 import { useContext } from "react";
-import { Pie, PieChart, Tooltip, Legend } from "recharts";
+import { Pie, PieChart, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const StatsPage = () => {
     const { timelineData, loading } = useContext(TimelineContext);
@@ -23,26 +23,28 @@ const StatsPage = () => {
 
     return (
         <div className="bg-base-300">
-            <div className="container mx-auto min-h-screen py-10 lg:py-20 px-5 md:px-0">
-                <h1 className="font-bold text-3xl">Friendship Analytics</h1>
+            <div className="container mx-auto min-h-screen py-5 md:py-10 px-2 md:px-0">
+                <h1 className="font-bold text-xl md:text-3xl">Friendship Analytics</h1>
 
                 {
                     timelineData.length > 0 ?
                         <div className="mt-5 bg-white px-5 py-10 rounded-xl border border-gray-200">
                             <p className="text-gray-500 font-medium">By Interaction Type:</p>
-                            <div className="w-full flex justify-center items-center">
-                                <PieChart width={400} height={400}>
-                                    <Pie
-                                        data={data}
-                                        dataKey="value"
-                                        nameKey="name"
-                                        innerRadius={100}
-                                        outerRadius={150}
-                                        paddingAngle={5}
-                                    />
-                                    <Tooltip />
-                                    <Legend />
-                                </PieChart>
+                            <div className="w-full h-75 md:h-100">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <PieChart>
+                                        <Pie
+                                            data={data}
+                                            dataKey="value"
+                                            nameKey="name"
+                                            innerRadius={60}
+                                            outerRadius={100}
+                                            paddingAngle={5}
+                                        />
+                                        <Tooltip />
+                                        <Legend />
+                                    </PieChart>
+                                </ResponsiveContainer>
                             </div>
                         </div>
                         :

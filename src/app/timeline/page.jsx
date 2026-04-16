@@ -39,11 +39,11 @@ const TimelinePage = () => {
 
     return (
         <div className="bg-base-300">
-            <div className="container mx-auto min-h-screen py-10 lg:py-20 px-5 md:px-0">
-                <h1 className="font-bold text-3xl">Timeline</h1>
+            <div className="container mx-auto min-h-screen py-5 md:py-10 px-2 md:px-0">
+                <h1 className="font-bold text-xl md:text-3xl">Timeline</h1>
                 {
                     timelineData.length > 0 &&
-                    <div className="mt-5 grid grid-cols-4 gap-5">
+                    <div className="mt-5 grid grid-cols-4 gap-1 md:gap-5">
                         <div className="col-span-1">
                             <select
                                 value={filter}

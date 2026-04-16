@@ -20,11 +20,11 @@ const Activity = ({dataToShow}) => {
                     const Icon = identifyIcon(data.type)
                     return <div key={index} className="bg-white shadow p-5 rounded-lg flex items-center gap-5 hover:bg-gray-100 border border-gray-200">
                         <div>
-                            <Icon className="text-4xl" />
+                            <Icon className="text-2xl" />
                         </div>
                         <div>
-                            <h1 className="text-xl"><span className="font-bold">{data.type} </span>with {data.friendName}</h1>
-                            <p className="text-gray-500">
+                            <h1><span className="font-bold">{data.type} </span>with {data.friendName}</h1>
+                            <p className="text-gray-500 text-sm">
                                 {
                                     new Date(data.date)
                                         .toLocaleDateString("en-US", {
