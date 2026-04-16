@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getFriends = async () => {
-    const response = await fetch("https://keen-keeper-sage-one.vercel.app/data/friends.json")
+    const response = await fetch("http://localhost:3000/data/friends.json")
     const data = await response.json()
 
     return data;
@@ -14,7 +14,7 @@ const Friends = async () => {
     return (
         <div className="container mx-auto py-10 px-5 lg:px-0">
             <h1 className="font-bold text-xl">Your Friends</h1>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5 mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-5 mt-5">
                 {
                     friendsData.map((data, index) =>
                         <Link key={index} href={`/friends/${data.id}`} >
