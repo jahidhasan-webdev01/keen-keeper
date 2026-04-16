@@ -1,12 +1,7 @@
-"use client"
-
 import { MdOutlineMessage, MdWifiCalling2 } from "react-icons/md";
 import { CiVideoOn } from "react-icons/ci";
-import { useContext } from "react";
-import { TimelineContext } from "@/context/TimelineContext";
 
-const Activity = () => {
-    const { timelineData } = useContext(TimelineContext);
+const Activity = ({dataToShow}) => {
 
     const identifyIcon = (type) => {
         if (type === "Call") {
@@ -21,7 +16,7 @@ const Activity = () => {
     return (
         <>
             {
-                timelineData.map((data, index) => {
+                dataToShow.map((data, index) => {
                     const Icon = identifyIcon(data.type)
                     return <div key={index} className="bg-white shadow p-5 rounded-lg flex items-center gap-5 hover:bg-gray-100 border border-gray-200">
                         <div>
@@ -29,7 +24,16 @@ const Activity = () => {
                         </div>
                         <div>
                             <h1 className="text-xl"><span className="font-bold">{data.type} </span>with {data.friendName}</h1>
-                            <p className="text-gray-500">{data.date}</p>
+                            <p className="text-gray-500">
+                                {
+                                    new Date(data.date)
+                                        .toLocaleDateString("en-US", {
+                                            month: "long",
+                                            day: "numeric",
+                                            year: "numeric",
+                                        })
+                                }
+                            </p>
                         </div>
                     </div>
                 })

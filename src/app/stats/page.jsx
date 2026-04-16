@@ -11,9 +11,9 @@ const StatsPage = () => {
     const videoCount = timelineData.filter(item => item.type === "Video").length;
 
     const data = [
-        { name: "Call", value: callCount, fill: "#4CAF50" },
-        { name: "Text", value: textCount, fill: "#2196F3" },
-        { name: "Video", value: videoCount, fill: "#FF9800" },
+        { name: "Call", value: callCount, fill: "#065F46" },
+        { name: "Text", value: textCount, fill: "#8B5CF6" },
+        { name: "Video", value: videoCount, fill: "#22C55E" },
     ];
 
     return (
