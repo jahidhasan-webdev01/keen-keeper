@@ -8,8 +8,7 @@ KeenKeeper is a modern friendship tracking web application built with **Next.js 
 
 ## 🚀 Live Demo
 
-🔗 https://your-live-link.vercel.app
-🔗 https://github.com/jahidhasan-webdev01/keen-keeper
+🔗 https://keen-keeper-sage-one.vercel.app
 
 ---
 
